@@ -1,6 +1,15 @@
 # metalsmith-code-highlight
 
-Finds content with `<code>` elements and highlights it using [HighlightJS](https://highlightjs.org/).
+Finds content with `<code>` elements and highlights it using [HighlightJS](https://github.com/isagalaev/highlight.js).
+
+## Configuration
+
+Supports the [Highlight.js options](http://highlightjs.readthedocs.org/en/latest/api.html#configure-options):
+
+* `tabReplace`
+* `useBR`
+* `classPrefix`
+* `languages`
 
 ## Alternatives
 

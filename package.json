@@ -1,0 +1,28 @@
+{
+  "name": "metalsmith-code-highlight",
+  "version": "0.0.1",
+  "description": "Metalsmith plugin for adding syntax highlighting to code within posts",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fortes/metalsmith-code-highlight.git"
+  },
+  "keywords": [
+    "metalsmith",
+    "syntax",
+    "highlight"
+  ],
+  "author": "Filipe Fortes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fortes/metalsmith-code-highlight/issues"
+  },
+  "homepage": "https://github.com/fortes/metalsmith-code-highlight",
+  "dependencies": {
+    "domino": "^1.0.18",
+    "highlight.js": "^8.2.0"
+  }
+}
