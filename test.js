@@ -5,6 +5,9 @@ var files = {
   'bogus.jpg': {
     contents: new Buffer('<code class=lang-js>// Hi</code>')
   },
+  'escape.html': {
+    contents: new Buffer('<code class=lang-js>true && false</code>')
+  },
   'code.html': {
     contents: new Buffer('<code class=lang-js>// Hi</code>')
   },
@@ -25,7 +28,13 @@ plugin(files, {}, function(err) {
   assert.equal(
     files['code.html'].contents.toString(),
     '<code class="lang-js"><span class="hljs-comment">// Hi</span></code>'
-  )
+  );
+
+  assert.equal(
+    files['escape.html'].contents.toString(),
+    '<code class="lang-js"><span class="hljs-literal">true</span> &amp;&amp; ' +
+    '<span class="hljs-literal">false</span></code>'
+  );
 
   assert.equal(
     files['double.html'].contents.toString(),
@@ -36,13 +45,13 @@ plugin(files, {}, function(err) {
     '<span class="hljs-string">"fs"</span>\n' +
     '<span class="hljs-built_in">console</span>.log fs.readFileSync ' +
     '<span class="hljs-string">"/etc/passwd"</span></code></pre>')
-  )
+  );
 
   // Don't touch non-HTML files
   assert.equal(
     files['bogus.jpg'].contents.toString(),
     '<code class=lang-js>// Hi</code>'
-  )
+  );
 
   console.log("All tests passed");
 });

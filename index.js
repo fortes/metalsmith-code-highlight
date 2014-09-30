@@ -43,10 +43,10 @@ var highlightFile = function(html) {
     lang = getLanguage(codeBlock);
 
     if (lang) {
-      result = highlight.highlight(lang, codeBlock.innerHTML, true);
+      result = highlight.highlight(lang, codeBlock.textContent, true);
     }
     else {
-      result = highlight.highlightAuto(codeBlock.innerHTML);
+      result = highlight.highlightAuto(codeBlock.textContent);
       if (result.language) {
         codeBlock.classList.add('lang-' + result.language);
       }
