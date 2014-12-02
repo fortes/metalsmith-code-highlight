@@ -4,7 +4,8 @@ var domino = require('domino'),
 var window, document, container;
 
 var HTML_FILENAME_REGEXP = /\.html$/,
-    CODE_LANGUAGE_REGEXP = /(?:^|\w)lang-(.+)(?:$|\w)/;
+    CODE_LANGUAGE_REGEXP = /(?:^|\w)lang-(.+)(?:$|\w)/,
+    DOCTYPE_TAG_REGEXP = /^[\s]*<!DOCTYPE ([^>]*)>/i
 
 /**
  * @param {!HTMLElement} element
@@ -25,17 +26,35 @@ var getLanguage = function(element) {
 
 /**
  * @param {!string} html
+ * @return {?string} Null if not found
+ */
+var getDocType = function(html) {
+  var match = (html || '').match(DOCTYPE_TAG_REGEXP);
+  if (match) {
+    return match[0];
+  }
+  return null;
+};
+
+/**
+ * @param {!string} html
  * @return {!string} New HTML with code highlighted
  */
 var highlightFile = function(html) {
-  var i, len, codeBlocks, codeBlock, lang, result;
+  var i, len, codeBlocks, codeBlock, lang, result, finalHtml;
 
-  // Parse HTML into DOM
-  window = window || domino.createWindow('');
-  document = window.document;
-  container = document.createElement('div');
+  var docType = getDocType(html);
 
-  container.innerHTML = html;
+  // Parse HTML into DOM.  If doctype present, load as entire html document instead of setting an elem innerHTML.
+  if (docType) {
+    container = domino.createWindow(html).document;
+  } else {
+    window = window || domino.createWindow('');
+    document = window.document;
+    container = document.createElement('div');
+
+    container.innerHTML = html;
+  }
 
   codeBlocks = container.querySelectorAll('code');
   for(i = 0, len = codeBlocks.length; i < len; i++) {
@@ -55,7 +74,13 @@ var highlightFile = function(html) {
     codeBlock.innerHTML = result.value;
   }
 
-  return container.innerHTML;
+  if (docType) {
+    finalHtml = docType + '\n' + container.getElementsByTagName('html')[0].outerHTML;
+  } else {
+    finalHtml = container.innerHTML;
+  }
+
+  return finalHtml;
 };
 
 module.exports = function(options) {

@@ -15,9 +15,18 @@ var files = {
     contents: new Buffer(
       '<p>Hello there.</p>' +
       '<p>Inline <code class=lang-js>document.all</code></p>' +
-      '<pre><code>' +
+      '<pre><code class=lang-coffeescript>' +
       '\nrequire "fs"\nconsole.log fs.readFileSync "/etc/passwd"' +
       '</code></pre>'
+    )
+  },
+  'doctype.html': {
+    contents: new Buffer(
+      '<!DOCTYPE html>' +
+      '<html>' +
+      '<head><title>Test Page</title></head>' +
+      '<body><pre><code class=lang-js>var x = [1, 2, 3];</code></pre></body>' +
+      '</html>'
     )
   }
 }
@@ -46,6 +55,15 @@ plugin(files, {}, function(err) {
     '<span class="hljs-built_in">console</span>.log fs.readFileSync ' +
     '<span class="hljs-string">"/etc/passwd"</span></code></pre>')
   );
+
+  assert.equal(
+    files['doctype.html'].contents.toString(),
+    ('<!DOCTYPE html>\n' +
+    '<html><head><title>Test Page</title></head><body><pre><code class="lang-js">' +
+    '<span class="hljs-keyword">var</span> x = [<span class="hljs-number">1</span>, ' +
+    '<span class="hljs-number">2</span>, <span class="hljs-number">3</span>];</code></pre></body></html>')
+  );
+
 
   // Don't touch non-HTML files
   assert.equal(
