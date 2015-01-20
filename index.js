@@ -1,4 +1,5 @@
-var domino = require('domino'),
+var assign = require('object-assign'),
+    domino = require('domino'),
     highlight = require('highlight.js');
 
 var window, document, container;
@@ -27,7 +28,7 @@ var getLanguage = function(element) {
  * @param {!string} html
  * @return {!string} New HTML with code highlighted
  */
-var highlightFile = function(html) {
+var highlightFile = function(html, scoped) {
   var i, len, codeBlocks, codeBlock, lang, result;
 
   // Parse HTML into DOM
@@ -37,7 +38,7 @@ var highlightFile = function(html) {
 
   container.innerHTML = html;
 
-  codeBlocks = container.querySelectorAll('code');
+  codeBlocks = container.querySelectorAll(scoped);
   for(i = 0, len = codeBlocks.length; i < len; i++) {
     codeBlock = codeBlocks[i];
     lang = getLanguage(codeBlock);
@@ -61,6 +62,10 @@ var highlightFile = function(html) {
 module.exports = function(options) {
   highlight.configure(options);
 
+  options = assign({
+    scoped: 'code'
+  }, options || {});
+
   /**
    * @param {Object} files
    * @param {Metalsmith} metalsmith
@@ -72,7 +77,7 @@ module.exports = function(options) {
       if (HTML_FILENAME_REGEXP.test(file)) {
         data = files[file];
         data.contents = new Buffer(
-          highlightFile(data.contents.toString())
+          highlightFile(data.contents.toString(), options.scoped)
         );
       }
     }
