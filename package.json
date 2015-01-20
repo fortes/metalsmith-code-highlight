@@ -23,6 +23,7 @@
   "homepage": "https://github.com/fortes/metalsmith-code-highlight",
   "dependencies": {
     "domino": "^1.0.18",
-    "highlight.js": "^8.2.0"
+    "highlight.js": "^8.2.0",
+    "object-assign": "^2.0.0"
   }
 }
