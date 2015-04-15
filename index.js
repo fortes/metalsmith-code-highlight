@@ -1,7 +1,7 @@
 var domino = require('domino'),
     highlight = require('highlight.js');
 
-var window, document, container;
+var window, document;
 
 var HTML_FILENAME_REGEXP = /\.html$/,
     CODE_LANGUAGE_REGEXP = /(?:^|\w)lang-(.+)(?:$|\w)/,
@@ -41,14 +41,15 @@ var getDocType = function(html) {
  * @return {!string} New HTML with code highlighted
  */
 var highlightFile = function(html) {
-  var i, len, codeBlocks, codeBlock, lang, result, finalHtml;
+  var i, len, codeBlocks, codeBlock, container, lang, result, finalHtml,
+      docType = getDocType(html);
 
-  var docType = getDocType(html);
-
-  // Parse HTML into DOM.  If doctype present, load as entire html document instead of setting an elem innerHTML.
+  // Parse HTML into DOM.  If doctype present, load as entire html document
+  // instead of setting an elem innerHTML.
   if (docType) {
     container = domino.createWindow(html).document;
-  } else {
+  }
+  else {
     window = window || domino.createWindow('');
     document = window.document;
     container = document.createElement('div');
@@ -75,8 +76,10 @@ var highlightFile = function(html) {
   }
 
   if (docType) {
-    finalHtml = docType + '\n' + container.getElementsByTagName('html')[0].outerHTML;
-  } else {
+    finalHtml = docType + '\n' + container.getElementsByTagName('html')[0]
+      .outerHTML;
+  }
+  else {
     finalHtml = container.innerHTML;
   }
 

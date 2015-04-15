@@ -59,9 +59,10 @@ plugin(files, {}, function(err) {
   assert.equal(
     files['doctype.html'].contents.toString(),
     ('<!DOCTYPE html>\n' +
-    '<html><head><title>Test Page</title></head><body><pre><code class="lang-js">' +
-    '<span class="hljs-keyword">var</span> x = [<span class="hljs-number">1</span>, ' +
-    '<span class="hljs-number">2</span>, <span class="hljs-number">3</span>];</code></pre></body></html>')
+    '<html><head><title>Test Page</title></head><body><pre>' +
+    '<code class="lang-js"><span class="hljs-keyword">var</span> ' +
+    'x = [<span class="hljs-number">1</span>, <span class="hljs-number">' +
+    '2</span>, <span class="hljs-number">3</span>];</code></pre></body></html>')
   );
 
 
