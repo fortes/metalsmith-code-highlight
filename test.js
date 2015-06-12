@@ -11,6 +11,9 @@ var files = {
   'code.html': {
     contents: new Buffer('<code class=lang-js>// Hi</code>')
   },
+  'pre.html': {
+    contents: new Buffer('<pre><code class=lang-js>// Hi</code></pre>')
+  },
   'double.html': {
     contents: new Buffer(
       '<p>Hello there.</p>' +
@@ -49,7 +52,7 @@ plugin(files, {}, function(err) {
     files['double.html'].contents.toString(),
     ('<p>Hello there.</p><p>Inline <code class="lang-js">' +
     '<span class="hljs-built_in">document</span>.all</code></p>' +
-    '<pre><code class="lang-coffeescript">\n' +
+    '<pre class="lang-highlight"><code class="lang-coffeescript">\n' +
     '<span class="hljs-built_in">require</span> ' +
     '<span class="hljs-string">"fs"</span>\n' +
     '<span class="hljs-built_in">console</span>.log fs.readFileSync ' +
@@ -59,7 +62,7 @@ plugin(files, {}, function(err) {
   assert.equal(
     files['doctype.html'].contents.toString(),
     ('<!DOCTYPE html>\n' +
-    '<html><head><title>Test Page</title></head><body><pre>' +
+    '<html><head><title>Test Page</title></head><body><pre class="lang-highlight">' +
     '<code class="lang-js"><span class="hljs-keyword">var</span> ' +
     'x = [<span class="hljs-number">1</span>, <span class="hljs-number">' +
     '2</span>, <span class="hljs-number">3</span>];</code></pre></body></html>')
