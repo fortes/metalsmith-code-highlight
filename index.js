@@ -41,7 +41,7 @@ var getDocType = function(html) {
  * @return {!string} New HTML with code highlighted
  */
 var highlightFile = function(html) {
-  var i, len, codeBlocks, codeBlock, container, lang, result, finalHtml,
+  var i, len, preBlocks, codeBlocks, codeBlock, container, lang, result, finalHtml,
       docType = getDocType(html);
 
   // Parse HTML into DOM.  If doctype present, load as entire html document
@@ -55,6 +55,11 @@ var highlightFile = function(html) {
     container = document.createElement('div');
 
     container.innerHTML = html;
+  }
+
+  preBlocks = container.querySelectorAll('pre');
+  for(i = 0, len = preBlocks.length; i < len; i++) {
+    preBlocks[i].classList.add('lang-highlight');
   }
 
   codeBlocks = container.querySelectorAll('code');

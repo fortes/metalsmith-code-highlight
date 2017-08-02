@@ -11,6 +11,9 @@ var files = {
   'code.html': {
     contents: new Buffer('<code class=lang-js>// Hi</code>')
   },
+  'pre.html': {
+    contents: new Buffer('<pre><code class=lang-js>// Hi</code></pre>')
+  },
   'double.html': {
     contents: new Buffer(
       '<p>Hello there.</p>' +
