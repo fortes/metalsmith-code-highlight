@@ -73,6 +73,10 @@ var highlightFile = function(html) {
     }
 
     codeBlock.innerHTML = result.value;
+    if (codeBlock.parentNode) {
+      // Tag the parent node as well for style adjustments
+      codeBlock.parentNode.classList.add('lang-highlight');
+    }
   }
 
   if (docType) {
