@@ -1,11 +1,11 @@
 var domino = require('domino'),
-    highlight = require('highlight.js');
+  highlight = require('highlight.js');
 
 var window, document;
 
 var HTML_FILENAME_REGEXP = /\.html$/,
-    CODE_LANGUAGE_REGEXP = /(?:^|\w)lang-(.+)(?:$|\w)/,
-    DOCTYPE_TAG_REGEXP = /^[\s]*<!DOCTYPE ([^>]*)>/i
+  CODE_LANGUAGE_REGEXP = /(?:^|\w)lang-(.+)(?:$|\w)/,
+  DOCTYPE_TAG_REGEXP = /^[\s]*<!DOCTYPE ([^>]*)>/i;
 
 /**
  * @param {!HTMLElement} element
@@ -41,15 +41,21 @@ var getDocType = function(html) {
  * @return {!string} New HTML with code highlighted
  */
 var highlightFile = function(html) {
-  var i, len, codeBlocks, codeBlock, container, lang, result, finalHtml,
-      docType = getDocType(html);
+  var i,
+    len,
+    codeBlocks,
+    codeBlock,
+    container,
+    lang,
+    result,
+    finalHtml,
+    docType = getDocType(html);
 
   // Parse HTML into DOM.  If doctype present, load as entire html document
   // instead of setting an elem innerHTML.
   if (docType) {
     container = domino.createWindow(html).document;
-  }
-  else {
+  } else {
     window = window || domino.createWindow('');
     document = window.document;
     container = document.createElement('div');
@@ -58,14 +64,13 @@ var highlightFile = function(html) {
   }
 
   codeBlocks = container.querySelectorAll('code');
-  for(i = 0, len = codeBlocks.length; i < len; i++) {
+  for (i = 0, len = codeBlocks.length; i < len; i++) {
     codeBlock = codeBlocks[i];
     lang = getLanguage(codeBlock);
 
     if (lang) {
       result = highlight.highlight(lang, codeBlock.textContent, true);
-    }
-    else {
+    } else {
       result = highlight.highlightAuto(codeBlock.textContent);
       if (result.language) {
         codeBlock.classList.add('lang-' + result.language);
@@ -80,10 +85,9 @@ var highlightFile = function(html) {
   }
 
   if (docType) {
-    finalHtml = docType + '\n' + container.getElementsByTagName('html')[0]
-      .outerHTML;
-  }
-  else {
+    finalHtml =
+      docType + '\n' + container.getElementsByTagName('html')[0].outerHTML;
+  } else {
     finalHtml = container.innerHTML;
   }
 
@@ -103,12 +107,10 @@ module.exports = function(options) {
     for (file in files) {
       if (HTML_FILENAME_REGEXP.test(file)) {
         data = files[file];
-        data.contents = new Buffer(
-          highlightFile(data.contents.toString())
-        );
+        data.contents = new Buffer(highlightFile(data.contents.toString()));
       }
     }
 
     setImmediate(done);
-  }
-}
+  };
+};
