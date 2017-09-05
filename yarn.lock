@@ -202,9 +202,9 @@ hawk@~3.1.3:
     hoek "2.x.x"
     sntp "1.x.x"
 
-highlight.js@^8.9.1:
-  version "8.9.1"
-  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-8.9.1.tgz#b8a9c5493212a9392f0222b649c9611497ebfb88"
+highlight.js@^9.12.0:
+  version "9.12.0"
+  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.12.0.tgz#e6d9dbe57cbefe60751f02af336195870c90c01e"
 
 hoek@2.x.x:
   version "2.16.3"
@@ -308,9 +308,9 @@ lodash@^4.13.1:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
-metalsmith-dom-transform@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/metalsmith-dom-transform/-/metalsmith-dom-transform-0.0.1.tgz#6c7c131e0708709bb1a8eb2e975f1cbf9e8334ce"
+metalsmith-dom-transform@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/metalsmith-dom-transform/-/metalsmith-dom-transform-0.0.2.tgz#e29e6e0714d2a79238ed3a4503b0523089cdd39b"
   dependencies:
     jsdom "^11.2.0"
 
