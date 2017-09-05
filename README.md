@@ -31,6 +31,26 @@ Supports the [Highlight.js options](http://highlightjs.readthedocs.org/en/latest
 * `classPrefix`
 * `languages`
 
+## Using with `metalsmith-dom-transform`
+
+If you're already using [`metalsmith-dom-transform`](https://github.com/fortes/metalsmith-dom-transform), you can save a little bit of overhead by accessing the code highlight transform directly:
+
+```js
+const domTransform = require('metalsmith-dom-transform');
+const codeHighlightTransform = require('metalsmith-code-highlight/transform');
+
+metalsmith.use(domTransform({
+  transforms: [
+    codeHighlightTransform(options),
+    // Your other transforms go here
+  ]
+}));
+```
+
+## Changelog
+
+* `0.1.0`: Expose transform for use with `metalsmith-dom-transform`
+
 ## Alternatives
 
 * [metalsmith-metallic](https://github.com/weswigham/metalsmith-metallic): Highlights only within Markdown
