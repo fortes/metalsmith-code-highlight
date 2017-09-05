@@ -1,6 +1,6 @@
 {
   "name": "metalsmith-code-highlight",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Metalsmith plugin for adding syntax highlighting to code within posts",
   "main": "index.js",
   "scripts": {
@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/fortes/metalsmith-code-highlight",
   "dependencies": {
-    "domino": "^1.0.18",
-    "highlight.js": "^8.9.1"
+    "highlight.js": "^8.9.1",
+    "metalsmith-dom-transform": "^0.0.1"
   }
 }
