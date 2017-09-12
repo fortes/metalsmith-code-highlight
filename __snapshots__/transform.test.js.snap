@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`via domTransform runs 1`] = `"<p class=\\"lang-highlight\\">Hello <code></code></p>"`;

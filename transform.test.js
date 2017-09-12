@@ -3,6 +3,7 @@
  * @jest-environment jsdom
  */
 jest.mock('highlight.js');
+const domTransform = require('metalsmith-dom-transform');
 const highlight = require('highlight.js');
 const {promisify} = require('util');
 const transform = require('./transform');
@@ -138,5 +139,23 @@ describe('highlights', () => {
     return transformer(fragment, {}).then(() => {
       expect(highlight.highlightAuto).toHaveBeenCalledTimes(2);
     });
+  });
+});
+
+describe('via domTransform', () => {
+  let files;
+  let plugin;
+
+  beforeEach(() => {
+    files = {
+      'index.html': {contents: new Buffer('<p>Hello <code>code</code></p>')},
+    };
+
+    plugin = promisify(domTransform({transforms: [transform()]}));
+    return plugin(files, {});
+  });
+
+  test('runs', () => {
+    expect(files['index.html'].contents.toString()).toMatchSnapshot();
   });
 });
