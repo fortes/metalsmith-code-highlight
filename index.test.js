@@ -36,27 +36,17 @@ beforeEach(() => {
 });
 
 test('<code>', () => {
-  expect(files['code.html'].contents.toString()).toBe(
-    '<code class="lang-js"><span class="hljs-comment">// Hi</span></code>',
-  );
+  expect(files['code.html'].contents.toString()).toMatchSnapshot();
 });
 
 test('escape entities', () => {
-  expect(files['escape.html'].contents.toString()).toBe(
-    '<code class="lang-js"><span class="hljs-literal">true</span> &amp;&amp; <span class="hljs-literal">false</span></code>',
-  );
+  expect(files['escape.html'].contents.toString()).toMatchSnapshot();
 });
 
 test('multiple code blocks', () => {
-  expect(files['double.html'].contents.toString()).toBe(
-    `<p>Hello there.</p><p class="lang-highlight">Inline <code class="lang-js"><span class="hljs-built_in">document</span>.all</code></p><pre class="lang-highlight"><code class="lang-coffeescript">
-<span class="hljs-built_in">require</span> <span class="hljs-string">"fs"</span>
-<span class="hljs-built_in">console</span>.log fs.readFileSync <span class="hljs-string">"/etc/passwd"</span></code></pre>`,
-  );
+  expect(files['double.html'].contents.toString()).toMatchSnapshot();
 });
 
 test('doctype', () => {
-  expect(files['doctype.html'].contents.toString()).toBe(
-    `<!DOCTYPE html><html><head><title>Test Page</title></head><body><pre class="lang-highlight"><code class="lang-js"><span class="hljs-keyword">var</span> x = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];</code></pre></body></html>`,
-  );
+  expect(files['doctype.html'].contents.toString()).toMatchSnapshot();
 });
