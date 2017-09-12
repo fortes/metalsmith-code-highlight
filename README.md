@@ -49,6 +49,7 @@ metalsmith.use(domTransform({
 
 ## Changelog
 
+* `1.0.0`: Upgrade to `metalsmith-dom-transform` `1.0.0` (API change)
 * `0.1.1`: Upgrade dependencies
 * `0.1.0`: Expose transform for use with `metalsmith-dom-transform`
 
