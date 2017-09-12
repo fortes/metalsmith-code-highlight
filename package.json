@@ -27,5 +27,9 @@
   },
   "devDependencies": {
     "jest": "^21.0.2"
+  },
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true
   }
 }
