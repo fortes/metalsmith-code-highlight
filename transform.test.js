@@ -47,7 +47,7 @@ describe('highlights', () => {
         value: 'third',
       });
 
-    return transformer(root, {}).then(() => {
+    return transformer(root, {}, {}).then(() => {
       expect(highlight.highlightAuto).toHaveBeenCalledTimes(3);
       expect(highlight.highlightAuto.mock.calls[0][0]).toBe('inline');
       expect(highlight.highlightAuto.mock.calls[1][0]).toBe(
@@ -70,7 +70,7 @@ describe('highlights', () => {
         value: 'true && false',
       });
 
-      return transformer(root, {});
+      return transformer(root, {}, {});
     });
 
     test('finds annotation', () => {
@@ -98,7 +98,7 @@ describe('highlights', () => {
         value: 'GORGEOUS && CODE',
       });
 
-      return transformer(root, {});
+      return transformer(root, {}, {});
     });
 
     test('annotates node with language', () => {
@@ -136,7 +136,7 @@ describe('highlights', () => {
       value: '',
     });
 
-    return transformer(fragment, {}).then(() => {
+    return transformer(fragment, {}, {}).then(() => {
       expect(highlight.highlightAuto).toHaveBeenCalledTimes(2);
     });
   });

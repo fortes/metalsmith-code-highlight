@@ -1,4 +1,6 @@
-# metalsmith-code-highlight [![build status](https://travis-ci.org/fortes/metalsmith-code-highlight.svg?branch=master)](https://travis-ci.org/fortes/metalsmith-code-highlight/) [![codecov](https://codecov.io/gh/fortes/metalsmith-code-highlight/branch/master/graph/badge.svg)](https://codecov.io/gh/fortes/metalsmith-code-highlight)
+# metalsmith-code-highlight
+
+[![build status](https://travis-ci.org/fortes/metalsmith-code-highlight.svg?branch=master)](https://travis-ci.org/fortes/metalsmith-code-highlight/) [![codecov](https://codecov.io/gh/fortes/metalsmith-code-highlight/branch/master/graph/badge.svg)](https://codecov.io/gh/fortes/metalsmith-code-highlight) [![Greenkeeper badge](https://badges.greenkeeper.io/fortes/metalsmith-code-highlight.svg)](https://greenkeeper.io/)
 
 Finds content with `<code>` elements and highlights it using [HighlightJS](https://github.com/isagalaev/highlight.js).
 
@@ -49,6 +51,7 @@ metalsmith.use(domTransform({
 
 ## Changelog
 
+* `1.0.0`: Upgrade to `metalsmith-dom-transform` `1.0.0` (API change)
 * `0.1.1`: Upgrade dependencies
 * `0.1.0`: Expose transform for use with `metalsmith-dom-transform`
 

@@ -16,7 +16,7 @@ function getLanguage(element) {
 module.exports = function(options) {
   highlight.configure(options);
 
-  return function highlightContent(root, data, done) {
+  return function highlightContent(root, data, metalsmith, done) {
     const codeBlocks = root.querySelectorAll('code');
     for (let i = 0; i < codeBlocks.length; i++) {
       codeBlock = codeBlocks[i];
