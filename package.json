@@ -4,7 +4,7 @@
   "description": "Metalsmith plugin for adding syntax highlighting to code within posts",
   "main": "index.js",
   "scripts": {
-    "test": "node test.js"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -24,5 +24,8 @@
   "dependencies": {
     "highlight.js": "^9.12.0",
     "metalsmith-dom-transform": "^0.0.2"
+  },
+  "devDependencies": {
+    "jest": "^21.0.2"
   }
 }
