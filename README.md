@@ -1,4 +1,4 @@
-# metalsmith-code-highlight [![build status](https://travis-ci.org/fortes/metalsmith-code-highlight.svg?branch=master)](https://travis-ci.org/fortes/metalsmith-code-highlight/)
+# metalsmith-code-highlight [![build status](https://travis-ci.org/fortes/metalsmith-code-highlight.svg?branch=master)](https://travis-ci.org/fortes/metalsmith-code-highlight/) [![codecov](https://codecov.io/gh/fortes/metalsmith-code-highlight/branch/master/graph/badge.svg)](https://codecov.io/gh/fortes/metalsmith-code-highlight)
 
 Finds content with `<code>` elements and highlights it using [HighlightJS](https://github.com/isagalaev/highlight.js).
 
