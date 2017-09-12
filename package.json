@@ -1,6 +1,6 @@
 {
   "name": "metalsmith-code-highlight",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "Metalsmith plugin for adding syntax highlighting to code within posts",
   "main": "index.js",
   "scripts": {
