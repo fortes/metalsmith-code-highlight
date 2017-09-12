@@ -26,6 +26,7 @@
     "metalsmith-dom-transform": "^0.0.2"
   },
   "devDependencies": {
+    "codecov": "^2.3.0",
     "jest": "^21.0.2"
   },
   "jest": {
