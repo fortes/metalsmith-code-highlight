@@ -1,11 +1,10 @@
 const highlight = require('highlight.js');
 
-const CODE_LANGUAGE_REGEXP = /(?:^|\w)lang-(.+)(?:$|\w)/;
+const CODE_LANGUAGE_REGEXP = /^lang-(.+)$/;
 
 function getLanguage(element) {
-  if (element.className) {
-    const match = element.className.match(CODE_LANGUAGE_REGEXP);
-
+  for (let i = 0; i < element.classList.length; i++) {
+    const match = element.classList[i].match(CODE_LANGUAGE_REGEXP);
     if (match) {
       return match[1];
     }
@@ -33,7 +32,7 @@ module.exports = function(options) {
       }
 
       codeBlock.innerHTML = result.value;
-      if (codeBlock.parentNode) {
+      if (codeBlock.parentNode && codeBlock.parentNode.classList) {
         // Tag the parent node as well for style adjustments
         codeBlock.parentNode.classList.add('lang-highlight');
       }
