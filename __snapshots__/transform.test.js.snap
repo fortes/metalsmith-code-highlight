@@ -1,3 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`via domTransform runs 1`] = `"<p class=\\"lang-highlight\\">Hello <code></code></p>"`;
+exports[`highlights document fragment 1`] = `"<code class=\\"highlighted\\">UGLY &amp;&amp; CODE</code>"`;
+
+exports[`highlights document fragment 2`] = `"<main><p class=\\"lang-highlight\\">Some <code class=\\"highlighted\\">inline</code> code.</p></main>"`;
+
+exports[`highlights multiple <code> blocks 1`] = `
+"<main class=\\"lang-highlight\\"><h1>Non-code text</h1>
+<p class=\\"lang-highlight\\">P with <code class=\\"highlighted\\">inline</code> code.</p>
+<pre class=\\"lang-highlight\\"><code class=\\"highlighted\\">Code Block Within pre</code></pre>
+<code class=\\"highlighted\\">Naked code block</code></main>"
+`;
+
+exports[`via domTransform runs 1`] = `"<p class=\\"lang-highlight\\">Hello <code class=\\"highlighted\\">code</code></p>"`;

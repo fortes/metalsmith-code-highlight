@@ -26,12 +26,7 @@ Output:
 
 ## Configuration
 
-Supports the [Highlight.js options](http://highlightjs.readthedocs.org/en/latest/api.html#configure-options):
-
-* `tabReplace`
-* `useBR`
-* `classPrefix`
-* `languages`
+Supports the [Highlight.js options](http://highlightjs.readthedocs.org/en/latest/api.html#configure-options) (e.g. `classPrefix`, `languages`, `tabReplace`).
 
 If you'd like to turn off automatic language detection, set `{languages: []}`. Only code blocks marked with an appropriate `class` like `lang-js` will be highlighted (useful when using [fenced code blocks](https://help.github.com/articles/creating-and-highlighting-code-blocks/#syntax-highlighting) in Markdown).
 
@@ -53,6 +48,7 @@ metalsmith.use(domTransform({
 
 ## Changelog
 
+* `1.0.1`: Use `highlightBlock` from `highlight.js` for the highlighting, slight change in HTML output
 * `1.0.0`: Upgrade to `metalsmith-dom-transform` `1.0.0` (API change)
 * `0.1.1`: Upgrade dependencies
 * `0.1.0`: Expose transform for use with `metalsmith-dom-transform`
