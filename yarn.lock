@@ -1589,8 +1589,8 @@ merge@^1.1.3:
   resolved "https://registry.yarnpkg.com/merge/-/merge-1.2.0.tgz#7531e39d4949c281a66b8c5a6e0265e8b05894da"
 
 metalsmith-dom-transform@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/metalsmith-dom-transform/-/metalsmith-dom-transform-1.0.0.tgz#907f9f0495654ba72cff5853f1de28782282d988"
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/metalsmith-dom-transform/-/metalsmith-dom-transform-1.0.1.tgz#a4f1a30dfac051878c557d81d4e3b9c4ee738db5"
   dependencies:
     jsdom "^11.2.0"
 

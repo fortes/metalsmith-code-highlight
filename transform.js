@@ -4,16 +4,14 @@ module.exports = function(options) {
   highlight.configure(options);
 
   return function highlightContent(root, data, metalsmith, done) {
-    const codeBlocks = root.querySelectorAll('code');
-    for (let i = 0; i < codeBlocks.length; i++) {
-      codeBlock = codeBlocks[i];
-      highlight.highlightBlock(codeBlock);
+    Array.from(root.querySelectorAll('code')).forEach(node => {
+      highlight.highlightBlock(node);
 
       // Tag the parent node as well for style adjustments
-      if (codeBlock.parentNode && codeBlock.parentNode.classList) {
-        codeBlock.parentNode.classList.add('lang-highlight');
+      if (node.parentNode && node.parentNode.classList) {
+        node.parentNode.classList.add('lang-highlight');
       }
-    }
+    });
 
     done();
   };

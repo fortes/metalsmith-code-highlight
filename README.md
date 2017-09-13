@@ -10,18 +10,30 @@ Input:
 
 ```html
 <p>Hello there.</p>
-<p>Inline <code class=lang-js>document.all</code></p>
-<pre class="lang-highlight"><code class=lang-coffeescript>require "fs"
-console.log fs.readFileSync "/etc/passwd"'</code></pre>
+<p>
+  Inline <code class=lang-js>document.all</code>
+</p>
+<pre>
+  <code class=lang-coffeescript>
+    require "fs"
+    console.log fs.readFileSync "/etc/passwd"'
+  </code>
+</pre>
 ```
 
 Output:
 
 ```html
 <p>Hello there.</p>
-<p class="lang-highlight">Inline <code class="lang-js hljs javascript"><span class="hljs-built_in"><span class="hljs-built_in"><span class="hljs-built_in"><span class="hljs-built_in"><span class="hljs-built_in">document</span></span></span></span></span>.all</code></p>
-<pre class="lang-highlight"><code class="lang-coffeescript hljs"><span class="hljs-built_in"><span class="hljs-built_in"><span class="hljs-built_in"><span class="hljs-built_in"><span class="hljs-built_in">require</span></span></span></span></span> <span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string">"fs"</span></span></span></span></span>
-<span class="hljs-built_in"><span class="hljs-built_in"><span class="hljs-built_in"><span class="hljs-built_in"><span class="hljs-built_in">console</span></span></span></span></span>.log fs.readFileSync <span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string">"/etc/passwd"</span></span></span></span></span><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string">'</span></span></span></span></span></code></pre>
+<p class="lang-highlight">
+  Inline <code class="lang-js hljs javascript"><span class="hljs-built_in">document</span>.all</code>
+</p>
+<pre class="lang-highlight">
+  <code class="lang-coffeescript hljs">
+    <span class="hljs-built_in">require</span> <span class="hljs-string">"fs"</span>
+    <span class="hljs-built_in">console</span>.log fs.readFileSync <span class="hljs-string">"/etc/passwd"</span><span class="hljs-string">'</span>
+  </code>
+</pre>
 ```
 
 ## Configuration
@@ -48,6 +60,7 @@ metalsmith.use(domTransform({
 
 ## Changelog
 
+* `1.0.2`: Upgrade to `metalsmith-dom-transform` `1.0.1`, may cause slight change in HTML output when there is no content to highlight
 * `1.0.1`: Use `highlightBlock` from `highlight.js` for the highlighting, slight change in HTML output
 * `1.0.0`: Upgrade to `metalsmith-dom-transform` `1.0.0` (API change)
 * `0.1.1`: Upgrade dependencies

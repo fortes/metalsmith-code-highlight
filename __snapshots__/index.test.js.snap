@@ -1,36 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`code.html 1`] = `"<code class=\\"lang-js hljs javascript\\"><span class=\\"hljs-comment\\"><span class=\\"hljs-comment\\">// Hi</span></span></code>"`;
+exports[`integration 1`] = `"<code class=\\"lang-js hljs javascript\\"><span class=\\"hljs-literal\\">true</span></code>"`;
 
-exports[`doctype.html 1`] = `
+exports[`integration 2`] = `"<code class=\\"lang-js hljs javascript\\"><span class=\\"hljs-literal\\">true</span> &amp;&amp; <span class=\\"hljs-literal\\">false</span></code>"`;
+
+exports[`integration 3`] = `
 "<!DOCTYPE html><html><head><title>Test Page</title></head>
-      <body class=\\"lang-highlight\\">
-      <pre class=\\"lang-highlight\\"><code class=\\"lang-js hljs javascript\\"><span class=\\"hljs-keyword\\"><span class=\\"hljs-keyword\\"><span class=\\"hljs-keyword\\"><span class=\\"hljs-keyword\\">var</span></span></span></span> x = [<span class=\\"hljs-number\\"><span class=\\"hljs-number\\"><span class=\\"hljs-number\\"><span class=\\"hljs-number\\">1</span></span></span></span>, <span class=\\"hljs-number\\"><span class=\\"hljs-number\\"><span class=\\"hljs-number\\"><span class=\\"hljs-number\\">2</span></span></span></span>, <span class=\\"hljs-number\\"><span class=\\"hljs-number\\"><span class=\\"hljs-number\\"><span class=\\"hljs-number\\">3</span></span></span></span>];</code></pre>
-      <code class=\\"lang-bogus\\">What language is this?</code>
-      
-      
-    </body></html>"
+        <body class=\\"lang-highlight\\">
+        <pre class=\\"lang-highlight\\"><code class=\\"lang-js hljs javascript\\"><span class=\\"hljs-keyword\\">var</span> x = [<span class=\\"hljs-number\\">1</span>, <span class=\\"hljs-number\\">2</span>, <span class=\\"hljs-number\\">3</span>];</code></pre>
+        <code class=\\"lang-bogus\\">What language is this?</code>
+        
+        
+      </body></html>"
 `;
 
-exports[`double.html 1`] = `
+exports[`integration 4`] = `
 "
-      <p>Hello there.</p>
-      <p class=\\"lang-highlight\\">Inline <code class=\\"lang-js other hljs javascript\\"><span class=\\"hljs-built_in\\"><span class=\\"hljs-built_in\\"><span class=\\"hljs-built_in\\">document</span></span></span>.all</code></p>
-      <pre class=\\"lang-highlight\\"><code class=\\"lang-coffeescript hljs\\">
-      
-<span class=\\"hljs-built_in\\"><span class=\\"hljs-built_in\\"><span class=\\"hljs-built_in\\">require</span></span></span> <span class=\\"hljs-string\\"><span class=\\"hljs-string\\"><span class=\\"hljs-string\\">\\"fs\\"</span></span></span>
-<span class=\\"hljs-built_in\\"><span class=\\"hljs-built_in\\"><span class=\\"hljs-built_in\\">console</span></span></span>.log fs.readFileSync <span class=\\"hljs-string\\"><span class=\\"hljs-string\\"><span class=\\"hljs-string\\">\\"/etc/passwd\\"</span></span></span>
-      </code></pre>
-    "
-`;
-
-exports[`escape.html 1`] = `"<code class=\\"lang-js hljs javascript\\"><span class=\\"hljs-literal\\">true</span> &amp;&amp; <span class=\\"hljs-literal\\">false</span></code>"`;
-
-exports[`readme.html 1`] = `
-"
-      <p>Hello there.</p>
-      <p class=\\"lang-highlight\\">Inline <code class=\\"lang-js hljs javascript\\"><span class=\\"hljs-built_in\\"><span class=\\"hljs-built_in\\"><span class=\\"hljs-built_in\\"><span class=\\"hljs-built_in\\"><span class=\\"hljs-built_in\\">document</span></span></span></span></span>.all</code></p>
-      <pre class=\\"lang-highlight\\"><code class=\\"lang-coffeescript hljs\\"><span class=\\"hljs-built_in\\"><span class=\\"hljs-built_in\\"><span class=\\"hljs-built_in\\"><span class=\\"hljs-built_in\\"><span class=\\"hljs-built_in\\">require</span></span></span></span></span> <span class=\\"hljs-string\\"><span class=\\"hljs-string\\"><span class=\\"hljs-string\\"><span class=\\"hljs-string\\"><span class=\\"hljs-string\\">\\"fs\\"</span></span></span></span></span>
-      <span class=\\"hljs-built_in\\"><span class=\\"hljs-built_in\\"><span class=\\"hljs-built_in\\"><span class=\\"hljs-built_in\\"><span class=\\"hljs-built_in\\">console</span></span></span></span></span>.log fs.readFileSync <span class=\\"hljs-string\\"><span class=\\"hljs-string\\"><span class=\\"hljs-string\\"><span class=\\"hljs-string\\"><span class=\\"hljs-string\\">\\"/etc/passwd\\"</span></span></span></span></span><span class=\\"hljs-string\\"><span class=\\"hljs-string\\"><span class=\\"hljs-string\\"><span class=\\"hljs-string\\"><span class=\\"hljs-string\\">'</span></span></span></span></span></code></pre>
-    "
+        <p>Hello there.</p>
+        <p class=\\"lang-highlight\\">
+          Inline <code class=\\"lang-js hljs javascript\\"><span class=\\"hljs-built_in\\">document</span>.all</code>
+        </p>
+        <pre class=\\"lang-highlight\\">          <code class=\\"lang-coffeescript hljs\\">
+            <span class=\\"hljs-built_in\\">require</span> <span class=\\"hljs-string\\">\\"fs\\"</span>
+            <span class=\\"hljs-built_in\\">console</span>.log fs.readFileSync <span class=\\"hljs-string\\">\\"/etc/passwd\\"</span><span class=\\"hljs-string\\">'
+          </span></code>
+        </pre>
+      "
 `;
