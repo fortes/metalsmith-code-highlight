@@ -19,9 +19,9 @@ Output:
 
 ```html
 <p>Hello there.</p>
-<p class="lang-highlight">Inline <code class="lang-js"><span class="hljs-built_in">document</span>.all</code></p>
-<pre class="lang-highlight"><code class="lang-coffeescript"><span class="hljs-built_in">require</span> <span class="hljs-string">"fs"</span>
-<span class="hljs-built_in">console</span>.log fs.readFileSync <span class="hljs-string">"/etc/passwd"</span></code></pre>
+<p class="lang-highlight">Inline <code class="lang-js hljs javascript"><span class="hljs-built_in"><span class="hljs-built_in"><span class="hljs-built_in"><span class="hljs-built_in"><span class="hljs-built_in">document</span></span></span></span></span>.all</code></p>
+<pre class="lang-highlight"><code class="lang-coffeescript hljs"><span class="hljs-built_in"><span class="hljs-built_in"><span class="hljs-built_in"><span class="hljs-built_in"><span class="hljs-built_in">require</span></span></span></span></span> <span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string">"fs"</span></span></span></span></span>
+<span class="hljs-built_in"><span class="hljs-built_in"><span class="hljs-built_in"><span class="hljs-built_in"><span class="hljs-built_in">console</span></span></span></span></span>.log fs.readFileSync <span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string">"/etc/passwd"</span></span></span></span></span><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string">'</span></span></span></span></span></code></pre>
 ```
 
 ## Configuration
