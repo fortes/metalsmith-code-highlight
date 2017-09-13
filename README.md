@@ -33,6 +33,8 @@ Supports the [Highlight.js options](http://highlightjs.readthedocs.org/en/latest
 * `classPrefix`
 * `languages`
 
+If you'd like to turn off automatic language detection, set `{languages: []}`. Only code blocks marked with an appropriate `class` like `lang-js` will be highlighted (useful when using [fenced code blocks](https://help.github.com/articles/creating-and-highlighting-code-blocks/#syntax-highlighting) in Markdown).
+
 ## Using with `metalsmith-dom-transform`
 
 If you're already using [`metalsmith-dom-transform`](https://github.com/fortes/metalsmith-dom-transform), you can save a little bit of overhead by accessing the code highlight transform directly:
