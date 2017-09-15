@@ -1,10 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`integration 1`] = `"<code class=\\"lang-js hljs javascript\\"><span class=\\"hljs-literal\\">true</span></code>"`;
-
-exports[`integration 2`] = `"<code class=\\"lang-js hljs javascript\\"><span class=\\"hljs-literal\\">true</span> &amp;&amp; <span class=\\"hljs-literal\\">false</span></code>"`;
-
-exports[`integration 3`] = `
+exports[`integration doctype.html 1`] = `
 "<!DOCTYPE html><html><head><title>Test Page</title></head>
         <body class=\\"lang-highlight\\">
         <pre class=\\"lang-highlight\\"><code class=\\"lang-js hljs javascript\\"><span class=\\"hljs-keyword\\">var</span> x = [<span class=\\"hljs-number\\">1</span>, <span class=\\"hljs-number\\">2</span>, <span class=\\"hljs-number\\">3</span>];</code></pre>
@@ -14,7 +10,11 @@ exports[`integration 3`] = `
       </body></html>"
 `;
 
-exports[`integration 4`] = `
+exports[`integration escape.html 1`] = `"<code class=\\"lang-js hljs javascript\\"><span class=\\"hljs-literal\\">true</span> &amp;&amp; <span class=\\"hljs-literal\\">false</span></code>"`;
+
+exports[`integration minimal.html 1`] = `"<code class=\\"lang-js hljs javascript\\"><span class=\\"hljs-literal\\">true</span></code>"`;
+
+exports[`integration readme.html 1`] = `
 "
         <p>Hello there.</p>
         <p class=\\"lang-highlight\\">
