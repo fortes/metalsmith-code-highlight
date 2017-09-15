@@ -40,7 +40,7 @@ beforeEach(() => {
     },
   };
 
-  return promisify(metalsmithCodeHighlight({useFragment: true}))(files, {});
+  return promisify(metalsmithCodeHighlight())(files, {});
 });
 
 test('integration', () => {
