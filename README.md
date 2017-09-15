@@ -60,6 +60,7 @@ metalsmith.use(domTransform({
 
 ## Changelog
 
+* `1.0.3`: Upgrade to `metalsmith-dom-transform` `2.0.0`, no functional changes
 * `1.0.2`: Upgrade to `metalsmith-dom-transform` `1.0.1`, may cause slight change in HTML output when there is no content to highlight
 * `1.0.1`: Use `highlightBlock` from `highlight.js` for the highlighting, slight change in HTML output
 * `1.0.0`: Upgrade to `metalsmith-dom-transform` `1.0.0` (API change)
