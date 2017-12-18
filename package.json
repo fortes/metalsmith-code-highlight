@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "codecov": "^3.0.0",
-    "jest": "^21.0.2"
+    "jest": "^22.0.0"
   },
   "jest": {
     "coverageDirectory": "./coverage/",
