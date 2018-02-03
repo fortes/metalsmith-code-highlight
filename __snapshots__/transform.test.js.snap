@@ -11,4 +11,11 @@ exports[`highlights multiple <code> blocks 1`] = `
 <code class=\\"highlighted\\">Naked code block</code></main>"
 `;
 
+exports[`highlights via custom selector 1`] = `
+"<main><h1>Non-code text</h1>
+<p>P with <code>inline</code> code.</p>
+<pre class=\\"lang-highlight\\"><code class=\\"highlighted\\">Code Block Within pre</code></pre>
+<code>Naked code block</code></main>"
+`;
+
 exports[`via domTransform runs 1`] = `"<p class=\\"lang-highlight\\">Hello <code class=\\"highlighted\\">code</code></p>"`;

@@ -56,6 +56,19 @@ describe('highlights', () => {
       expect(root.outerHTML).toMatchSnapshot();
     });
   });
+
+  test('via custom selector', () => {
+    let transformer = promisify(transform({selector: 'pre > code'}));
+    root.innerHTML = `<h1>Non-code text</h1>
+<p>P with <code>inline</code> code.</p>
+<pre><code>Code Block Within pre</code></pre>
+<code>Naked code block</code>`;
+
+    return transformer(root, {}, {}).then(() => {
+      expect(highlight.highlightBlock).toHaveBeenCalledTimes(1);
+      expect(root.outerHTML).toMatchSnapshot();
+    });
+  });
 });
 
 describe('via domTransform', () => {
