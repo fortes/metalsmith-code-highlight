@@ -4,13 +4,13 @@ const {promisify} = require('util');
 
 const files = {
   'minimal.html': {
-    contents: new Buffer('<code class=lang-js>true</code>'),
+    contents: Buffer.from('<code class=lang-js>true</code>'),
   },
   'escape.html': {
-    contents: new Buffer('<code class=lang-js>true && false</code>'),
+    contents: Buffer.from('<code class=lang-js>true && false</code>'),
   },
   'doctype.html': {
-    contents: new Buffer(`
+    contents: Buffer.from(`
         <!DOCTYPE html>
         <html>
         <head><title>Test Page</title></head>
@@ -22,7 +22,7 @@ const files = {
       `),
   },
   'readme.html': {
-    contents: new Buffer(`
+    contents: Buffer.from(`
         <p>Hello there.</p>
         <p>
           Inline <code class=lang-js>document.all</code>
