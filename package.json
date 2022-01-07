@@ -22,15 +22,16 @@
   },
   "homepage": "https://github.com/fortes/metalsmith-code-highlight",
   "dependencies": {
-    "highlight.js": "^10.0.0",
+    "highlight.js": "~10.4",
     "metalsmith-dom-transform": "^2.0.0"
   },
   "devDependencies": {
     "codecov": "^3.0.0",
-    "jest": "^22.0.0"
+    "jest": "^27.4.7"
   },
   "jest": {
     "coverageDirectory": "./coverage/",
-    "collectCoverage": true
+    "collectCoverage": true,
+    "testURL": "https://example.com"
   }
 }
