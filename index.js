@@ -3,6 +3,6 @@ const highlightTransform = require('./transform');
 
 module.exports = function(options) {
   return domTransform({
-    transforms: [highlightTransform(options)],
+    transforms: [highlightTransform(options || {})],
   });
 };
