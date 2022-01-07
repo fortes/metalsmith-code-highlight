@@ -62,6 +62,7 @@ metalsmith.use(domTransform({
 
 ## Changelog
 
+* `1.1.1`: Update a bunch of dependencies
 * `1.1.0`: Allow a `selector` option for overriding the default selector of `code`.
 * `1.0.3`: Upgrade to `metalsmith-dom-transform` `2.0.0`, no functional changes
 * `1.0.2`: Upgrade to `metalsmith-dom-transform` `1.0.1`, may cause slight change in HTML output when there is no content to highlight
