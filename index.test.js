@@ -1,4 +1,7 @@
-/* eslint-env jest,node */
+/** eslint-env browser,jest,node
+ *
+ * @jest-environment jsdom
+ */
 const metalsmithCodeHighlight = require('./index');
 const {promisify} = require('util');
 

@@ -1,5 +1,5 @@
-/* eslint-env browser,jest,node */
-/*
+/** eslint-env browser,jest,node
+ *
  * @jest-environment jsdom
  */
 jest.mock('highlight.js');
