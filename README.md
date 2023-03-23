@@ -1,3 +1,7 @@
+# No longer maintained
+
+This is no longer maintained, code is archived and available for forking though.
+
 # metalsmith-code-highlight
 
 [![build status](https://travis-ci.org/fortes/metalsmith-code-highlight.svg?branch=master)](https://travis-ci.org/fortes/metalsmith-code-highlight/) [![codecov](https://codecov.io/gh/fortes/metalsmith-code-highlight/branch/master/graph/badge.svg)](https://codecov.io/gh/fortes/metalsmith-code-highlight) [![Greenkeeper badge](https://badges.greenkeeper.io/fortes/metalsmith-code-highlight.svg)](https://greenkeeper.io/)
